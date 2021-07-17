@@ -120,7 +120,7 @@ public class main extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setText("jLabel7");
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/covid/help/desk/infoicon.png"))); // NOI18N
 
         info.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         info.setText("Information");
@@ -150,11 +150,11 @@ public class main extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(mini)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Exit))))
+                        .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addComponent(jLabel6)
@@ -289,7 +289,8 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_UserMouseExited
 
     private void infoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoActionPerformed
-        // TODO add your handling code here:
+        setVisible(false);
+        new info().setVisible(true);
     }//GEN-LAST:event_infoActionPerformed
 
     private void infoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoMouseEntered
