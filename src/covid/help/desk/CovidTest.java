@@ -109,7 +109,8 @@ class CovidTest extends JFrame implements ActionListener {
                             JOptionPane.showMessageDialog(this, "You are Covid --" + " Negative.");
                         }
 			
-			System.exit(0);
+			setVisible(false);
+                        new CovidT().setVisible(true);
 		}
 	}
 

@@ -11,6 +11,7 @@ public class info extends javax.swing.JFrame {
     
     public info() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     
@@ -142,10 +143,10 @@ public class info extends javax.swing.JFrame {
                         .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(mvLayout.createSequentialGroup()
                                 .addComponent(jLabel9)
-                                .addGap(93, 93, 93)
+                                .addGap(105, 105, 105)
                                 .addComponent(mini)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(mvLayout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(73, 73, 73)

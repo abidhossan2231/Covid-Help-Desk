@@ -110,8 +110,8 @@
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jScrollPane1" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
-                                          <Component id="CN" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
-                                          <Component id="NM" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
+                                          <Component id="number" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
+                                          <Component id="name" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -152,14 +152,14 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="NM" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="name" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="CN" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="number" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
@@ -283,14 +283,14 @@
                 <Property name="text" type="java.lang.String" value="PoP Of Massage :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="NM">
+            <Component class="javax.swing.JTextField" name="name">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="14" style="1"/>
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="CN">
+            <Component class="javax.swing.JTextField" name="number">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="14" style="1"/>
@@ -304,7 +304,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextArea" name="PM">
+                <Component class="javax.swing.JTextArea" name="pop">
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
