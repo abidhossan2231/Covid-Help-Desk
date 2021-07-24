@@ -244,7 +244,9 @@ public class User extends javax.swing.JFrame {
 
     private void WantHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WantHActionPerformed
         setVisible(false);
-        new WantH().setVisible(true);
+      
+        WantH objWantH=new WantH("","","");
+         objWantH.setVisible(true);
     }//GEN-LAST:event_WantHActionPerformed
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed

@@ -6,6 +6,9 @@ import java.awt.Image;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import javax.swing.ImageIcon;
 
 import javax.swing.JFileChooser;
@@ -35,10 +38,10 @@ public class NeedH extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        NM = new javax.swing.JTextField();
-        CN = new javax.swing.JTextField();
+        name = new javax.swing.JTextField();
+        number = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        PM = new javax.swing.JTextArea();
+        pop = new javax.swing.JTextArea();
         nfro = new javax.swing.JLabel();
         nfor = new javax.swing.JLabel();
         nidfro = new javax.swing.JButton();
@@ -116,13 +119,13 @@ public class NeedH extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel7.setText("PoP Of Massage :");
 
-        NM.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        name.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
 
-        CN.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        number.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
 
-        PM.setColumns(20);
-        PM.setRows(5);
-        jScrollPane1.setViewportView(PM);
+        pop.setColumns(20);
+        pop.setRows(5);
+        jScrollPane1.setViewportView(pop);
 
         nfro.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         nfro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -221,8 +224,8 @@ public class NeedH extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CN, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(NM, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(number, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(22, Short.MAX_VALUE))))
             .addGroup(mvLayout.createSequentialGroup()
                 .addGap(320, 320, 320)
@@ -251,12 +254,12 @@ public class NeedH extends javax.swing.JFrame {
                 .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(NM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(CN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
@@ -383,7 +386,30 @@ public class NeedH extends javax.swing.JFrame {
     }//GEN-LAST:event_nidfroMouseExited
 
     private void SAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SAActionPerformed
-        // TODO add your handling code here:
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/covid_help_desk","root","abid1294");
+            
+            PreparedStatement pst = con.prepareStatement("INSERT INTO application_need_help VALUES(?,?,?,?,?)");
+    
+            pst.setString(1,name.getText());
+            pst.setString(2,number.getText());
+            pst.setString(3,pop.getText());
+            pst.setString(4,nfro.getText());
+            pst.setString(4,nfor.getText());
+ 
+            pst.execute();
+            JOptionPane.showMessageDialog(this,"Record Updated Sucessfully");
+            name.setText(null);
+            number.setText(null);
+            pop.setText(null);
+            nfro.setIcon(null);
+            nfor.setIcon(null);
+            
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
     }//GEN-LAST:event_SAActionPerformed
 
     private void SAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SAMouseEntered
@@ -441,10 +467,7 @@ public class NeedH extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField CN;
     private javax.swing.JButton Exit;
-    private javax.swing.JTextField NM;
-    private javax.swing.JTextArea PM;
     private javax.swing.JButton SA;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -456,9 +479,12 @@ public class NeedH extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton mini;
     private javax.swing.JPanel mv;
+    private javax.swing.JTextField name;
     private javax.swing.JLabel nfor;
     private javax.swing.JLabel nfro;
     private javax.swing.JButton nidfor;
     private javax.swing.JButton nidfro;
+    private javax.swing.JTextField number;
+    private javax.swing.JTextArea pop;
     // End of variables declaration//GEN-END:variables
 }

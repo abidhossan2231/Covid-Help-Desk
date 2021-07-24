@@ -398,8 +398,7 @@ public class CovidNT extends javax.swing.JFrame {
             Desktop browser = Desktop.getDesktop();
             browser.browse(new URI("https://www.surokkha.gov.bd/"));
         }
-        catch(Exception e){
-            
+        catch(Exception e){     
         }
     }//GEN-LAST:event_VRActionPerformed
 

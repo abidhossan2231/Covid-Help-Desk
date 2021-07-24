@@ -1,4 +1,3 @@
-
 package covid.help.desk;
 
 import java.awt.Color;
@@ -6,20 +5,26 @@ import java.awt.Image;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+
 public class WantH extends javax.swing.JFrame {
+
     String filename = null;
     byte[] person_image = null;
-    
-    public WantH() {
+
+    public WantH(String string, String string1, String string2) {
         initComponents();
         this.setLocationRelativeTo(null);
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -308,17 +313,16 @@ public class WantH extends javax.swing.JFrame {
     }//GEN-LAST:event_ExitMouseEntered
 
     private void ExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseExited
-        Exit.setBackground(new Color(236,236,252));
+        Exit.setBackground(new Color(236, 236, 252));
     }//GEN-LAST:event_ExitMouseExited
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
-        JFrame frame = new JFrame ("Return Home");
+        JFrame frame = new JFrame("Return Home");
         if (JOptionPane.showConfirmDialog(frame, "Confirm Back Home?",
-            "Covid Help Desk!",
-            JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION)
-    {
-        setVisible(false);
-        new CovidNT().setVisible(true);
+                "Covid Help Desk!",
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
+            setVisible(false);
+            new CovidNT().setVisible(true);
         }
     }//GEN-LAST:event_ExitActionPerformed
 
@@ -327,7 +331,7 @@ public class WantH extends javax.swing.JFrame {
     }//GEN-LAST:event_miniMouseEntered
 
     private void miniMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseExited
-        mini.setBackground(new Color(236,236,252));
+        mini.setBackground(new Color(236, 236, 252));
     }//GEN-LAST:event_miniMouseExited
 
     private void miniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miniActionPerformed
@@ -339,7 +343,7 @@ public class WantH extends javax.swing.JFrame {
     }//GEN-LAST:event_nidfroMouseEntered
 
     private void nidfroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nidfroMouseExited
-        nidfro.setBackground(new Color(236,236,252));
+        nidfro.setBackground(new Color(236, 236, 252));
     }//GEN-LAST:event_nidfroMouseExited
 
     private void nidfroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nidfroActionPerformed
@@ -347,19 +351,18 @@ public class WantH extends javax.swing.JFrame {
         chooser.showOpenDialog(null);
         File f = chooser.getSelectedFile();
         filename = f.getAbsolutePath();
-        ImageIcon imageIcon = new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(nfro.getWidth(),nfro.getHeight(),Image.SCALE_SMOOTH));
+        ImageIcon imageIcon = new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(nfro.getWidth(), nfro.getHeight(), Image.SCALE_SMOOTH));
         nfro.setIcon(imageIcon);
-        try{
+        try {
             File image = new File(filename);
             FileInputStream fis = new FileInputStream(image);
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
             byte[] buf = new byte[2048];
-            for(int readNum;(readNum=fis.read(buf))!=-1;){
-                bos.write(buf,0,readNum);
+            for (int readNum; (readNum = fis.read(buf)) != -1;) {
+                bos.write(buf, 0, readNum);
             }
             person_image = bos.toByteArray();
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
 
@@ -370,7 +373,7 @@ public class WantH extends javax.swing.JFrame {
     }//GEN-LAST:event_nidforMouseEntered
 
     private void nidforMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nidforMouseExited
-        nidfor.setBackground(new Color(236,236,252));
+        nidfor.setBackground(new Color(236, 236, 252));
     }//GEN-LAST:event_nidforMouseExited
 
     private void nidforActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nidforActionPerformed
@@ -378,19 +381,18 @@ public class WantH extends javax.swing.JFrame {
         chooser.showOpenDialog(null);
         File f = chooser.getSelectedFile();
         filename = f.getAbsolutePath();
-        ImageIcon imageIcon = new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(nfor.getWidth(),nfor.getHeight(),Image.SCALE_SMOOTH));
+        ImageIcon imageIcon = new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(nfor.getWidth(), nfor.getHeight(), Image.SCALE_SMOOTH));
         nfor.setIcon(imageIcon);
-        try{
+        try {
             File image = new File(filename);
             FileInputStream fis = new FileInputStream(image);
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
             byte[] buf = new byte[2048];
-            for(int readNum;(readNum=fis.read(buf))!=-1;){
-                bos.write(buf,0,readNum);
+            for (int readNum; (readNum = fis.read(buf)) != -1;) {
+                bos.write(buf, 0, readNum);
             }
             person_image = bos.toByteArray();
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_nidforActionPerformed
@@ -400,11 +402,37 @@ public class WantH extends javax.swing.JFrame {
     }//GEN-LAST:event_SAMouseEntered
 
     private void SAMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SAMouseExited
-        SA.setBackground(new Color(236,236,252));
+        SA.setBackground(new Color(236, 236, 252));
     }//GEN-LAST:event_SAMouseExited
 
     private void SAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SAActionPerformed
-        // TODO add your handling code here:
+
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/covid_help_desk","root","abid1294");
+            
+            PreparedStatement pst = con.prepareStatement("INSERT INTO application_want_to_help VALUES(?,?,?,?,?)");
+    
+            pst.setString(1,name.getText());
+            pst.setString(2,number.getText());
+            pst.setString(3,pop.getText());
+            pst.setString(4,nfro.getText());
+            pst.setString(4,nfor.getText());
+ 
+            pst.execute();
+            JOptionPane.showMessageDialog(this,"Record Updated Sucessfully");
+            name.setText(null);
+            number.setText(null);
+            pop.setText(null);
+            nfro.setIcon(null);
+            nfor.setIcon(null);
+            
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+        
+       
     }//GEN-LAST:event_SAActionPerformed
 
     private void mvMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mvMousePressed
@@ -415,9 +443,10 @@ public class WantH extends javax.swing.JFrame {
     private void mvMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mvMouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
-        setLocation(x-xMouse, y-yMouse);
+        setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_mvMouseDragged
-    private int xMouse,yMouse;
+    private int xMouse, yMouse;
+
     /**
      * @param args the command line arguments
      */
@@ -448,7 +477,8 @@ public class WantH extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new WantH().setVisible(true);
+                
+                
             }
         });
     }
