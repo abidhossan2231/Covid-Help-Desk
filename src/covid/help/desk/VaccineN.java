@@ -36,6 +36,7 @@ public class VaccineN extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        Exit1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -137,6 +138,10 @@ public class VaccineN extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(0, 153, 51));
         jLabel14.setText("#stay home stay safe!!");
 
+        Exit1.setBackground(new java.awt.Color(236, 236, 252));
+        Exit1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        Exit1.setText("X");
+
         javax.swing.GroupLayout mvLayout = new javax.swing.GroupLayout(mv);
         mv.setLayout(mvLayout);
         mvLayout.setHorizontalGroup(
@@ -158,30 +163,28 @@ public class VaccineN extends javax.swing.JFrame {
                             .addGroup(mvLayout.createSequentialGroup()
                                 .addGap(62, 62, 62)
                                 .addComponent(jLabel6)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)))
                 .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mvLayout.createSequentialGroup()
-                            .addComponent(mini)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mvLayout.createSequentialGroup()
-                            .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel8)
-                                .addComponent(jLabel7)
-                                .addComponent(jLabel9)
-                                .addComponent(jLabel10)
-                                .addComponent(jLabel3))
-                            .addGap(21, 21, 21)))
                     .addGroup(mvLayout.createSequentialGroup()
                         .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel3)
                             .addComponent(jLabel12)
                             .addComponent(jLabel11)
                             .addComponent(jLabel13)
                             .addGroup(mvLayout.createSequentialGroup()
                                 .addGap(149, 149, 149)
                                 .addComponent(jLabel14)))
-                        .addGap(16, 16, 16))))
+                        .addGap(3, 3, 3))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mvLayout.createSequentialGroup()
+                        .addComponent(mini)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Exit1))))
         );
         mvLayout.setVerticalGroup(
             mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,9 +192,11 @@ public class VaccineN extends javax.swing.JFrame {
                 .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(mvLayout.createSequentialGroup()
-                        .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(mini, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(mini, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Exit1))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel3)))
                 .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -321,6 +326,7 @@ public class VaccineN extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Exit;
+    private javax.swing.JButton Exit1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

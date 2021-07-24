@@ -47,6 +47,7 @@ public class NeedH extends javax.swing.JFrame {
         nidfro = new javax.swing.JButton();
         nidfor = new javax.swing.JButton();
         SA = new javax.swing.JButton();
+        Exit1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -185,6 +186,23 @@ public class NeedH extends javax.swing.JFrame {
             }
         });
 
+        Exit1.setBackground(new java.awt.Color(236, 236, 252));
+        Exit1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        Exit1.setText("X");
+        Exit1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Exit1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Exit1MouseExited(evt);
+            }
+        });
+        Exit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Exit1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout mvLayout = new javax.swing.GroupLayout(mv);
         mv.setLayout(mvLayout);
         mvLayout.setHorizontalGroup(
@@ -199,8 +217,10 @@ public class NeedH extends javax.swing.JFrame {
                             .addGroup(mvLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(mini)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Exit1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(mvLayout.createSequentialGroup()
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))))
@@ -241,9 +261,11 @@ public class NeedH extends javax.swing.JFrame {
             .addGroup(mvLayout.createSequentialGroup()
                 .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mvLayout.createSequentialGroup()
-                        .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(mini, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(mini, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Exit1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
@@ -430,6 +452,24 @@ public class NeedH extends javax.swing.JFrame {
         int y = evt.getYOnScreen();
         setLocation(x-xMouse, y-yMouse);
     }//GEN-LAST:event_mvMouseDragged
+
+    private void Exit1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Exit1MouseEntered
+        Exit.setBackground(Color.red);
+    }//GEN-LAST:event_Exit1MouseEntered
+
+    private void Exit1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Exit1MouseExited
+        Exit.setBackground(new Color(236,236,252));
+    }//GEN-LAST:event_Exit1MouseExited
+
+    private void Exit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Exit1ActionPerformed
+        JFrame frame = new JFrame ("Exit Application");
+        if (JOptionPane.showConfirmDialog(frame, "Confirm Exit?",
+            "Covid Help Desk!",
+            JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION)
+    {
+        System.exit(0);
+        }
+    }//GEN-LAST:event_Exit1ActionPerformed
     private int xMouse,yMouse;
     /**
      * @param args the command line arguments
@@ -468,6 +508,7 @@ public class NeedH extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Exit;
+    private javax.swing.JButton Exit1;
     private javax.swing.JButton SA;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
