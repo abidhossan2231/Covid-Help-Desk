@@ -189,7 +189,7 @@ public class main extends javax.swing.JFrame {
                     .addGroup(mvLayout.createSequentialGroup()
                         .addGap(78, 78, 78)
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(42, Short.MAX_VALUE))
+                        .addContainerGap(39, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mvLayout.createSequentialGroup()
                         .addComponent(info)
                         .addGap(28, 28, 28))))
