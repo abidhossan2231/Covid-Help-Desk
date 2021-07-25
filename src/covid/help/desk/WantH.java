@@ -134,12 +134,12 @@ public class WantH extends javax.swing.JFrame {
 
         nfro.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         nfro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        nfro.setText("NID Front Side");
+        nfro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         nfro.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         nfor.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         nfor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        nfor.setText("NID Forward Side");
+        nfor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         nfor.setPreferredSize(new java.awt.Dimension(93, 17));
 
         nidfro.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -440,7 +440,7 @@ public class WantH extends javax.swing.JFrame {
             pst.setString(2,number.getText());
             pst.setString(3,pop.getText());
             pst.setString(4,nfro.getText());
-            pst.setString(4,nfor.getText());
+            pst.setString(5,nfor.getText());
  
             pst.execute();
             JOptionPane.showMessageDialog(this,"Record Updated Sucessfully");

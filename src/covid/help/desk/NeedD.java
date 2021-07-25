@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -40,6 +42,8 @@ public class NeedD extends javax.swing.JFrame {
         pop = new javax.swing.JTextArea();
         SA = new javax.swing.JButton();
         Exit1 = new javax.swing.JButton();
+        nfro = new javax.swing.JLabel();
+        nfor = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -153,6 +157,16 @@ public class NeedD extends javax.swing.JFrame {
             }
         });
 
+        nfro.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        nfro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nfro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        nfro.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        nfor.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        nfor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nfor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        nfor.setPreferredSize(new java.awt.Dimension(93, 17));
+
         javax.swing.GroupLayout mvLayout = new javax.swing.GroupLayout(mv);
         mv.setLayout(mvLayout);
         mvLayout.setHorizontalGroup(
@@ -178,8 +192,10 @@ public class NeedD extends javax.swing.JFrame {
                         .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(mvLayout.createSequentialGroup()
                                 .addComponent(jLabel1)
-                                .addGap(239, 239, 239)
-                                .addComponent(SA))
+                                .addGap(59, 59, 59)
+                                .addComponent(nfro, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(nfor, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(mvLayout.createSequentialGroup()
                                 .addGap(20, 20, 20)
                                 .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -195,6 +211,10 @@ public class NeedD extends javax.swing.JFrame {
                                     .addComponent(number, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(22, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mvLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SA)
+                .addContainerGap())
         );
         mvLayout.setVerticalGroup(
             mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,9 +251,13 @@ public class NeedD extends javax.swing.JFrame {
                         .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(138, 138, 138)
+                        .addGap(33, 33, 33)
+                        .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nfro, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nfor, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(SA)
-                        .addGap(26, 26, 26))))
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -290,28 +314,40 @@ public class NeedD extends javax.swing.JFrame {
     }//GEN-LAST:event_SAMouseExited
 
     private void SAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SAActionPerformed
-        try{
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/covid_help_desk","root","abid1294");
-
-            PreparedStatement pst = con.prepareStatement("INSERT INTO application_need_help VALUES(?,?,?,?,?)");
-
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/covid_help_desk","root","abid1294");
+            PreparedStatement pst = con.prepareStatement( "SELECT *FROM  application_need_help VALUES(?,?,?,?)");
             pst.setString(1,name.getText());
-            pst.setString(2,number.getText());
-            pst.setString(3,pop.getText());
-            
+            ResultSet rs=pst.executeQuery();
 
-            pst.execute();
-            JOptionPane.showMessageDialog(this,"Record Updated Sucessfully");
-            name.setText(null);
-            number.setText(null);
-            pop.setText(null);
-            
+            if(rs.next()){
+                String fname=rs.getString("name");
+                name.setText(fname);
+                String cnumber=rs.getString("number");
+                number.setText(cnumber);
+                String age1=rs.getString("pop");
+                pop.setText(age1);
+                                
+                 byte[]image1 =rs.getBytes("nfro");
+                 ImageIcon path1=new ImageIcon(image1);
+                 nfro.setIcon(path1);
+                 byte[]image2 =rs.getBytes("nfor");
+                 ImageIcon path2=new ImageIcon(image2);
+                 nfor.setIcon(path2);
+    
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"No Specific Id Found");
+            }
+        }
 
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
         }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
-        }
+
+    
     }//GEN-LAST:event_SAActionPerformed
 
     private void Exit1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Exit1MouseEntered
@@ -393,6 +429,8 @@ public class NeedD extends javax.swing.JFrame {
     private javax.swing.JButton mini;
     private javax.swing.JPanel mv;
     private javax.swing.JTextField name;
+    private javax.swing.JLabel nfor;
+    private javax.swing.JLabel nfro;
     private javax.swing.JTextField number;
     private javax.swing.JTextArea pop;
     // End of variables declaration//GEN-END:variables
