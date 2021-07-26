@@ -328,15 +328,13 @@ public class WantD extends javax.swing.JFrame {
             PreparedStatement pst = con.prepareStatement( "SELECT *FROM  application_want_to_help VALUES(?,?,?,?)");
             pst.setString(1,name.getText());
             ResultSet rs=pst.executeQuery();
-
             if(rs.next()){
                 String fname=rs.getString("name");
                 name.setText(fname);
                 String cnumber=rs.getString("number");
                 number.setText(cnumber);
                 String popm=rs.getString("pop");
-                pop.setText(popm);
-                                
+                pop.setText(popm);                                
                  byte[]image1 =rs.getBytes("nfro");
                  ImageIcon path1=new ImageIcon(image1);
                  nfro.setIcon(path1);
@@ -349,7 +347,6 @@ public class WantD extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null,"No Specific Id Found");
             }
         }
-
         catch (Exception e)
         {
             JOptionPane.showMessageDialog(null, e);
