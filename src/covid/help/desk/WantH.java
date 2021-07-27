@@ -448,8 +448,7 @@ public class WantH extends javax.swing.JFrame {
             number.setText(null);
             pop.setText(null);
             nfro.setIcon(null);
-            nfor.setIcon(null);
-            
+            nfor.setIcon(null);           
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());
