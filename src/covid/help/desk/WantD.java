@@ -242,11 +242,11 @@ public class WantD extends javax.swing.JFrame {
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         JFrame frame = new JFrame("Return Home");
-        if (JOptionPane.showConfirmDialog(frame, "Confirm Back Home?",
+        if (JOptionPane.showConfirmDialog(frame, "Confirm Go To Admin Dashboard?",
             "Covid Help Desk!",
             JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
         setVisible(false);
-        new CovidNT().setVisible(true);
+        new AdminDB().setVisible(true);
         }
     }//GEN-LAST:event_ExitActionPerformed
 

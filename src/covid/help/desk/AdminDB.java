@@ -29,10 +29,9 @@ public class AdminDB extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         NewsTest = new javax.swing.JButton();
         mini = new javax.swing.JButton();
-        nt = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         Exit1 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -149,19 +148,6 @@ public class AdminDB extends javax.swing.JFrame {
             }
         });
 
-        nt.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        nt.setText("Notification");
-        nt.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                ntMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                ntMouseExited(evt);
-            }
-        });
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/covid/help/desk/notifi.jpg"))); // NOI18N
-
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/covid/help/desk/co-news (1).png"))); // NOI18N
 
         Exit1.setBackground(new java.awt.Color(236, 236, 252));
@@ -181,6 +167,8 @@ public class AdminDB extends javax.swing.JFrame {
             }
         });
 
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/covid/help/desk/button-covid-19.png"))); // NOI18N
+
         javax.swing.GroupLayout mvLayout = new javax.swing.GroupLayout(mv);
         mv.setLayout(mvLayout);
         mvLayout.setHorizontalGroup(
@@ -194,7 +182,7 @@ public class AdminDB extends javax.swing.JFrame {
                         .addComponent(NewsTest))
                     .addGroup(mvLayout.createSequentialGroup()
                         .addGap(72, 72, 72)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)))
                 .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mvLayout.createSequentialGroup()
                         .addGap(69, 69, 69)
@@ -202,34 +190,32 @@ public class AdminDB extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mvLayout.createSequentialGroup()
                         .addGap(51, 51, 51)
                         .addComponent(jLabel2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(WantH))
                 .addGap(41, 41, 41))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mvLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(nt)
-                .addGap(176, 176, 176))
             .addGroup(mvLayout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jLabel6)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(mvLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mvLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel9)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mvLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(mini, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(mvLayout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(jLabel6)))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel7)
-                .addGap(18, 18, 18)
-                .addComponent(mini, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Exit1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Exit1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         mvLayout.setVerticalGroup(
             mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,16 +233,13 @@ public class AdminDB extends javax.swing.JFrame {
                         .addComponent(jLabel6))
                     .addGroup(mvLayout.createSequentialGroup()
                         .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(mvLayout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(jLabel7))
                             .addComponent(Exit1)
                             .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(Exit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(mini, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                        .addGap(18, 18, 18)
-                        .addComponent(nt)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                                .addComponent(mini, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel9)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mvLayout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -335,14 +318,6 @@ public class AdminDB extends javax.swing.JFrame {
     private void ExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseExited
          Exit.setBackground(new Color(236,236,252));
     }//GEN-LAST:event_ExitMouseExited
-
-    private void ntMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ntMouseEntered
-         nt.setBackground(Color.yellow);
-    }//GEN-LAST:event_ntMouseEntered
-
-    private void ntMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ntMouseExited
-         nt.setBackground(new Color(236,236,252));
-    }//GEN-LAST:event_ntMouseExited
 
     private void NewsTestMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NewsTestMouseEntered
          NewsTest.setBackground(Color.red);
@@ -444,10 +419,9 @@ public class AdminDB extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JButton mini;
     private javax.swing.JPanel mv;
-    private javax.swing.JButton nt;
     // End of variables declaration//GEN-END:variables
 }
