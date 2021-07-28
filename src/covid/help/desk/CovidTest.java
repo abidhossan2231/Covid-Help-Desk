@@ -22,7 +22,7 @@ class CovidTest extends JFrame implements ActionListener {
 	int count = 0, current = 0, x = 1, y = 1, now = 0;
 	int m[] = new int[15];
 
-	// create jFrame with radioButton and JButton
+
 	CovidTest(String s) {
 		super(s);
 		label = new JLabel();
@@ -217,7 +217,7 @@ class CovidTest extends JFrame implements ActionListener {
 	}
 
 	public static void main(String s[]) {
-		new CovidTest("COVID-19 Test With #SYMPTOMS!!");
+		new CovidTest("Covid-19 Positive Test with #Symptoms!!");
 	}
 
 }

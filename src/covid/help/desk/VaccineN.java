@@ -141,6 +141,19 @@ public class VaccineN extends javax.swing.JFrame {
         Exit1.setBackground(new java.awt.Color(236, 236, 252));
         Exit1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         Exit1.setText("X");
+        Exit1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Exit1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Exit1MouseExited(evt);
+            }
+        });
+        Exit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Exit1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout mvLayout = new javax.swing.GroupLayout(mv);
         mv.setLayout(mvLayout);
@@ -248,7 +261,7 @@ public class VaccineN extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseEntered
-        Exit.setBackground(Color.red);
+        Exit.setBackground(Color.black);
     }//GEN-LAST:event_ExitMouseEntered
 
     private void ExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseExited
@@ -257,7 +270,7 @@ public class VaccineN extends javax.swing.JFrame {
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         JFrame frame = new JFrame ("Return Home");
-        if (JOptionPane.showConfirmDialog(frame, "Confirm Back Home?",
+        if (JOptionPane.showConfirmDialog(frame, "Confirm Go to Covid News & Test Window?",
             "Covid Help Desk!",
             JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION)
     {
@@ -288,6 +301,24 @@ public class VaccineN extends javax.swing.JFrame {
         int y = evt.getYOnScreen();
         setLocation(x-xMouse, y-yMouse);
     }//GEN-LAST:event_mvMouseDragged
+
+    private void Exit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Exit1ActionPerformed
+        JFrame frame = new JFrame ("Exit Application");
+        if (JOptionPane.showConfirmDialog(frame, "Confirm Exit?",
+            "Covid Help Desk!",
+            JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION)
+        {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_Exit1ActionPerformed
+
+    private void Exit1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Exit1MouseEntered
+        Exit1.setBackground(Color.red);
+    }//GEN-LAST:event_Exit1MouseEntered
+
+    private void Exit1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Exit1MouseExited
+        Exit.setBackground(new Color(236,236,252));
+    }//GEN-LAST:event_Exit1MouseExited
     private int xMouse,yMouse;
     /**
      * @param args the command line arguments

@@ -332,12 +332,12 @@ public class CovidNT extends javax.swing.JFrame {
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         JFrame frame = new JFrame ("Return Home");
-        if (JOptionPane.showConfirmDialog(frame, "Confirm Back Home?",
+        if (JOptionPane.showConfirmDialog(frame, "Confirm Go to User Dashboard?",
             "Covid Help Desk!",
             JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION)
-    {
-        setVisible(false);
-        new main().setVisible(true);
+        {
+            setVisible(false);
+            new main().setVisible(true);
         }
     }//GEN-LAST:event_ExitActionPerformed
 
@@ -354,7 +354,7 @@ public class CovidNT extends javax.swing.JFrame {
     }//GEN-LAST:event_miniActionPerformed
 
     private void ExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseEntered
-        Exit.setBackground(Color.red);
+        Exit.setBackground(Color.black);
     }//GEN-LAST:event_ExitMouseEntered
 
     private void ExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseExited
@@ -447,11 +447,11 @@ public class CovidNT extends javax.swing.JFrame {
     }//GEN-LAST:event_mvMouseDragged
 
     private void Exit1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Exit1MouseEntered
-        Exit.setBackground(Color.red);
+        Exit1.setBackground(Color.red);
     }//GEN-LAST:event_Exit1MouseEntered
 
     private void Exit1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Exit1MouseExited
-        Exit.setBackground(new Color(236,236,252));
+        Exit1.setBackground(new Color(236,236,252));
     }//GEN-LAST:event_Exit1MouseExited
 
     private void Exit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Exit1ActionPerformed
