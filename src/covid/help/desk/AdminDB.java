@@ -37,6 +37,7 @@ public class AdminDB extends javax.swing.JFrame {
         setUndecorated(true);
 
         mv.setBackground(new java.awt.Color(236, 236, 252));
+        mv.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         mv.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 mvMouseDragged(evt);
@@ -151,7 +152,7 @@ public class AdminDB extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/covid/help/desk/co-news (1).png"))); // NOI18N
 
         Exit1.setBackground(new java.awt.Color(236, 236, 252));
-        Exit1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        Exit1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         Exit1.setText("X");
         Exit1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -211,11 +212,11 @@ public class AdminDB extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mvLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(mini, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(mini, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Exit1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(3, 3, 3)
+                        .addComponent(Exit1))))
         );
         mvLayout.setVerticalGroup(
             mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,11 +233,10 @@ public class AdminDB extends javax.swing.JFrame {
                                 .addGap(76, 76, 76)))
                         .addComponent(jLabel6))
                     .addGroup(mvLayout.createSequentialGroup()
-                        .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Exit1)
-                            .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(Exit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(mini, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(Exit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(mini, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Exit1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(32, 32, 32)
                         .addComponent(jLabel9)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
@@ -296,11 +296,11 @@ public class AdminDB extends javax.swing.JFrame {
 
     private void NewsTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewsTestActionPerformed
         setVisible(false);
-        new CovidNT().setVisible(true);
+        new CovidNTA().setVisible(true);
     }//GEN-LAST:event_NewsTestActionPerformed
 
     private void miniMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseEntered
-        mini.setBackground(Color.black);
+        mini.setBackground(Color.GRAY);
     }//GEN-LAST:event_miniMouseEntered
 
     private void miniMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseExited
@@ -312,7 +312,7 @@ public class AdminDB extends javax.swing.JFrame {
     }//GEN-LAST:event_miniActionPerformed
 
     private void ExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseEntered
-         Exit.setBackground(Color.red);
+         Exit.setBackground(Color.black);
     }//GEN-LAST:event_ExitMouseEntered
 
     private void ExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseExited
@@ -355,11 +355,11 @@ public class AdminDB extends javax.swing.JFrame {
     }//GEN-LAST:event_mvMouseDragged
 
     private void Exit1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Exit1MouseEntered
-        Exit.setBackground(Color.red);
+        Exit1.setBackground(Color.red);
     }//GEN-LAST:event_Exit1MouseEntered
 
     private void Exit1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Exit1MouseExited
-        Exit.setBackground(new Color(236,236,252));
+        Exit1.setBackground(new Color(236,236,252));
     }//GEN-LAST:event_Exit1MouseExited
 
     private void Exit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Exit1ActionPerformed

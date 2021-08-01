@@ -60,7 +60,7 @@ class CovidTest extends JFrame implements ActionListener {
                 		
 	}
 
-	// handle all actions based on event
+
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnNext) {
 			if (check())

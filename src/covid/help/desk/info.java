@@ -40,6 +40,7 @@ public class info extends javax.swing.JFrame {
         setUndecorated(true);
 
         mv.setBackground(new java.awt.Color(236, 236, 252));
+        mv.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         mv.setPreferredSize(new java.awt.Dimension(850, 441));
         mv.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -55,6 +56,7 @@ public class info extends javax.swing.JFrame {
         Exit.setBackground(new java.awt.Color(236, 236, 252));
         Exit.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         Exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/covid/help/desk/Home.0.png"))); // NOI18N
+        Exit.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Exit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 ExitMouseEntered(evt);
@@ -85,6 +87,7 @@ public class info extends javax.swing.JFrame {
 
         mini.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         mini.setText("-");
+        mini.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         mini.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 miniMouseEntered(evt);
@@ -144,9 +147,9 @@ public class info extends javax.swing.JFrame {
                             .addGroup(mvLayout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addGap(105, 105, 105)
-                                .addComponent(mini)
+                                .addComponent(mini, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(mvLayout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(73, 73, 73)
@@ -178,11 +181,11 @@ public class info extends javax.swing.JFrame {
                                 .addGap(18, 18, Short.MAX_VALUE))
                             .addGroup(mvLayout.createSequentialGroup()
                                 .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(mvLayout.createSequentialGroup()
                         .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(mini)
+                            .addComponent(mini, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

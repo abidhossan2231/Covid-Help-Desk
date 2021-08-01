@@ -43,6 +43,7 @@ public class NeedH extends javax.swing.JFrame {
         setUndecorated(true);
 
         mv.setBackground(new java.awt.Color(236, 236, 252));
+        mv.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         mv.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 mvMouseDragged(evt);
@@ -57,6 +58,7 @@ public class NeedH extends javax.swing.JFrame {
         Exit.setBackground(new java.awt.Color(236, 236, 252));
         Exit.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         Exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/covid/help/desk/Home.0.png"))); // NOI18N
+        Exit.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Exit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 ExitMouseEntered(evt);
@@ -87,6 +89,7 @@ public class NeedH extends javax.swing.JFrame {
 
         mini.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         mini.setText("-");
+        mini.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         mini.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 miniMouseEntered(evt);
@@ -137,6 +140,7 @@ public class NeedH extends javax.swing.JFrame {
         Exit1.setBackground(new java.awt.Color(236, 236, 252));
         Exit1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         Exit1.setText("X");
+        Exit1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Exit1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Exit1MouseEntered(evt);
@@ -166,11 +170,11 @@ public class NeedH extends javax.swing.JFrame {
                         .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(mvLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(mini)
+                                .addComponent(mini, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Exit1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Exit1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(mvLayout.createSequentialGroup()
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))))
@@ -205,9 +209,9 @@ public class NeedH extends javax.swing.JFrame {
                     .addGroup(mvLayout.createSequentialGroup()
                         .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(mini, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(Exit1))
+                                .addComponent(mini, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                                .addComponent(Exit, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE))
+                            .addComponent(Exit1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
@@ -287,9 +291,9 @@ public class NeedH extends javax.swing.JFrame {
     private void SAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SAActionPerformed
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/covid_help_desk","root","abid1294");
-            
-            PreparedStatement pst = con.prepareStatement("INSERT INTO application_need_help VALUES(?,?,?)");
+            Connection con =DriverManager.getConnection("jdbc:mysql://sql6.freemysqlhosting.net:3306/sql6428124","sql6428124","VCn1UKEt3V");
+            //Connection con=DriverManager.getConnection("jdbc:mysql://mysql-41754-0.cloudclusters.net:15462/covid_help_desk","admin","8SAVe8XE");
+            PreparedStatement pst = con.prepareStatement("insert into app_need_help VALUES(?,?,?)");
     
             pst.setString(1,name.getText());
             pst.setString(2,number.getText());

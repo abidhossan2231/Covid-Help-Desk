@@ -14,7 +14,8 @@ public class Connector {
     {
         try{
         Class.forName("com.mysql.cj.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/covid_help_desk", "root","abid1294");
+        con = DriverManager.getConnection("jdbc:mysql://sql6.freemysqlhosting.net:3306/sql6428124","sql6428124","VCn1UKEt3V");
+        //Connection con=DriverManager.getConnection("jdbc:mysql://mysql-41754-0.cloudclusters.net:15462/covid_help_desk","admin","8SAVe8XE");
         System.out.println("Done");
         } 
         catch(ClassNotFoundException ex){
