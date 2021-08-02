@@ -127,6 +127,8 @@ public class VaccineN extends javax.swing.JFrame {
             }
         });
 
+        jTable1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTable1.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -143,6 +145,7 @@ public class VaccineN extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(jTable1);
 
         see.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -189,7 +192,7 @@ public class VaccineN extends javax.swing.JFrame {
                         .addGap(46, 46, 46))
                     .addGroup(mvLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(mvLayout.createSequentialGroup()
                                 .addGap(62, 62, 62)
@@ -199,29 +202,29 @@ public class VaccineN extends javax.swing.JFrame {
                                 .addComponent(jLabel1)
                                 .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(mvLayout.createSequentialGroup()
-                                        .addGap(27, 27, 27)
-                                        .addComponent(jLabel2))
-                                    .addGroup(mvLayout.createSequentialGroup()
                                         .addGap(54, 54, 54)
                                         .addComponent(see)
                                         .addGap(35, 35, 35)
-                                        .addComponent(jButton1)))))
-                        .addGap(3, 3, 3)))
-                .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jButton1))
+                                    .addGroup(mvLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel2)))))
+                        .addGap(12, 12, 12)))
+                .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(mvLayout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(138, 138, 138))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mvLayout.createSequentialGroup()
+                        .addGroup(mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(mvLayout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(jLabel14))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(102, 102, 102))
+                    .addGroup(mvLayout.createSequentialGroup()
                         .addComponent(mini, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(3, 3, 3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Exit1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(119, 119, 119))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mvLayout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addGap(160, 160, 160))))
+                        .addGap(95, 95, 95))))
         );
         mvLayout.setVerticalGroup(
             mvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

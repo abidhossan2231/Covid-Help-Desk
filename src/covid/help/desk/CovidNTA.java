@@ -356,7 +356,8 @@ public class CovidNTA extends javax.swing.JFrame {
     }//GEN-LAST:event_mvMousePressed
 
     private void UrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UrgActionPerformed
-        // TODO add your handling code here:
+        setVisible(false);
+        new ug().setVisible(true);
     }//GEN-LAST:event_UrgActionPerformed
 
     private void UrgMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UrgMouseEntered

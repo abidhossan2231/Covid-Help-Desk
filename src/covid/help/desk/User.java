@@ -293,7 +293,7 @@ public class User extends javax.swing.JFrame {
     }//GEN-LAST:event_NewsTestActionPerformed
 
     private void miniMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseEntered
-        mini.setBackground(Color.black);
+        mini.setBackground(Color.GRAY);
     }//GEN-LAST:event_miniMouseEntered
 
     private void miniMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseExited

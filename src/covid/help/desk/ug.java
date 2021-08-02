@@ -19,7 +19,6 @@ public class ug extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -124,6 +123,7 @@ public class ug extends javax.swing.JFrame {
 
         ug.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
 
+        jTable1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTable1.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

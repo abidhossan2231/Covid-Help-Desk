@@ -2,6 +2,13 @@ package covid.help.desk;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,7 +21,8 @@ class CovidTest extends JFrame implements ActionListener {
     
 	private static final long serialVersionUID = 1L;
 
-	JLabel label;
+	JLabel label,label1;
+        public int X=0,Y=0;
         
 	JRadioButton radioButton[] = new JRadioButton[5];
 	JButton btnNext, btnBookmark;
@@ -27,6 +35,8 @@ class CovidTest extends JFrame implements ActionListener {
 		super(s);
 		label = new JLabel();
 		add(label);
+                label1 = new JLabel();
+                add(label1);
 		bg = new ButtonGroup();
 		for (int i = 0; i < 5; i++) {
 			radioButton[i] = new JRadioButton();
@@ -44,22 +54,20 @@ class CovidTest extends JFrame implements ActionListener {
                 label.setBounds(230, 40, 450, 40);
 		radioButton[0].setBounds(300, 120, 450, 40);
 		radioButton[1].setBounds(300, 180, 200, 40);
-                radioButton[2].setBounds(300, 240, 200, 40);
+                radioButton[2].setBounds(300, 240, 200, 45);
 		btnNext.setBounds(200, 320, 100, 30);
 		btnBookmark.setBounds(470, 320, 100, 30);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                radioButton[0].setFont(new java.awt.Font("Times New Roman", 1, 36));
-                radioButton[1].setFont(new java.awt.Font("Times New Roman", 1, 36));
-                radioButton[2].setFont(new java.awt.Font("Times New Roman", 1, 36));
-                label.setFont(new java.awt.Font("Times New Roman", 1, 24));
+                radioButton[0].setFont(new java.awt.Font("Times New Roman", 1, 34));
+                radioButton[1].setFont(new java.awt.Font("Times New Roman", 1, 34));
+                radioButton[2].setFont(new java.awt.Font("Times New Roman", 1, 34));
+                label.setFont(new java.awt.Font("Times New Roman", 1, 30));               
 		setLayout(null);
 		setLocation(350, 150);
-		setVisible(true);
-		setSize(850, 441);
-                this.setBackground(new java.awt.Color(236, 236, 252));
-                		
+		setVisible(true);             
+		this.setSize(850, 441);
+                this.setBackground(new java.awt.Color(236, 236, 252));               		
 	}
-
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnNext) {
@@ -105,90 +113,56 @@ class CovidTest extends JFrame implements ActionListener {
                         if(count>=4){
                            JOptionPane.showMessageDialog(this, "You are Covid --" + " Positive."); 
                         }
-                        else if(count<4){
+                        setVisible(false);
+                        new VaccineN().setVisible(true);
+                }
+                else if(e.getActionCommand().equals("Result")){
+                    if (check())
+				count = count + 1;
+			current++;
+                    if(count<4)
+                        {
                             JOptionPane.showMessageDialog(this, "You are Covid --" + " Negative.");
                         }
-			
 			setVisible(false);
                         new CovidT().setVisible(true);
 		}
 	}
 
 	// SET Questions with options
-	void set() {
-		radioButton[4].setSelected(true);
-		if (current == 0) {
-			label.setText("Que1:  Swollen tongue?");
-			radioButton[0].setText("YES");
-			radioButton[1].setText("NO");
-                        radioButton[2].setText("Not Sure");
-			
-		}
-		if (current == 1) {
-			label.setText("Que2:  Mild chest pain?");
-			radioButton[0].setText("YES");
-			radioButton[1].setText("NO");
-                        radioButton[2].setText("Not Sure");
-		}
-		if (current == 2) {
-			label.setText("Que3: Burning eyes?");
-			radioButton[0].setText("YES");
-			radioButton[1].setText("NO");
-                        radioButton[2].setText("Not Sure");
-		}
-		if (current == 3) {
-			label.setText("Que4: Pale color of hands and toes?");
-			radioButton[0].setText("YES");
-			radioButton[1].setText("NO");
-                        radioButton[2].setText("Not Sure");
-		}
-		if (current == 4) {
-			label.setText("Que5:  Burns on the palms of the hands?");
-			radioButton[0].setText("YES");
-			radioButton[1].setText("NO");
-                        radioButton[2].setText("Not Sure");
-		}
-		if (current == 5) {
-			label.setText("Que6: Headache?");
-			radioButton[0].setText("YES");
-			radioButton[1].setText("NO");
-                        radioButton[2].setText("Not Sure");
-		}
-		if (current == 6) {
-			label.setText("Que7:  Sore throat?");
-			radioButton[0].setText("YES");
-			radioButton[1].setText("NO");
-                        radioButton[2].setText("Not Sure");
-		}
-		if (current == 7) {
-			label.setText("Que8:  Redness on the soles of the feet?");
-			radioButton[0].setText("YES");
-			radioButton[1].setText("NO");
-                        radioButton[2].setText("Not Sure");
-		}
-		if (current == 8) {
-			label.setText("Que9: Diarrhea?");
-			radioButton[0].setText("YES");
-			radioButton[1].setText("NO");
-                        radioButton[2].setText("Not Sure");
-		}
-		if (current == 9) {
-			label.setText("Que10: Blow in the face?");
-			radioButton[0].setText("YES");
-			radioButton[1].setText("NO");
-                        radioButton[2].setText("Not Sure");
-		}
-                if (current == 10) {
-			label.setText("Que11: Rash on the skin?");
-			radioButton[0].setText("YES");
-			radioButton[1].setText("NO");
-                        radioButton[2].setText("Not Sure");
-		}
-		label.setBounds(230, 40, 450, 40);
-		for (int i = 0, j = 0; i <= 80; i += 40, j++)
-			radioButton[j].setBounds(300, 120 + i, 220, 40);
-	}
+         void set(){
+             radioButton[4].setSelected(true);
+             try{
+                 String question = null,qid;
 
+                        Class.forName("com.mysql.cj.jdbc.Driver");
+                        Connection con =DriverManager.getConnection("jdbc:mysql://sql6.freemysqlhosting.net:3306/sql6428124","sql6428124","VCn1UKEt3V");
+                        
+                        Statement stmt1 = con.createStatement();
+                        ResultSet rs =stmt1.executeQuery("SELECT * FROM covid_question;");
+                        while(rs.next())
+                      
+                        {
+                             qid = rs.getString("qid");
+                             question = rs.getString("ques"); 
+                             if(X==Integer.parseInt(qid)){
+                                 break;
+                             }
+                        }
+                        label.setText(question);
+			radioButton[0].setText("YES");
+			radioButton[1].setText("NO");
+                        radioButton[2].setText("NOT SURE");
+                        X++;
+                        
+                                                
+		}catch(SQLException e)
+		{
+		    JOptionPane.showMessageDialog(this, e.getMessage());
+		} catch (ClassNotFoundException ex) {
+                Logger.getLogger(CovidTest.class.getName()).log(Level.SEVERE, null, ex);
+            }
+         }
 	// declare right answers.
 	boolean check() {
 		if (current == 0)

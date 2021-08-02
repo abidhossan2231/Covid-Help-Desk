@@ -276,7 +276,7 @@ public class CovidT extends javax.swing.JFrame {
     }//GEN-LAST:event_ExitActionPerformed
 
     private void miniMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseEntered
-        mini.setBackground(Color.black);
+        mini.setBackground(Color.GRAY);
     }//GEN-LAST:event_miniMouseEntered
 
     private void miniMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseExited
@@ -290,7 +290,7 @@ public class CovidT extends javax.swing.JFrame {
     private void testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testActionPerformed
         
         CovidTest cvt = new CovidTest("Covid-19 Positive Test with #Symptoms!!");
-        cvt.setVisible(true);
+        cvt.setVisible(false);
         
     }//GEN-LAST:event_testActionPerformed
 

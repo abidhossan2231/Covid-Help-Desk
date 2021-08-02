@@ -126,7 +126,8 @@ public class CovidN extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jTable1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTable1.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jTable1.setForeground(new java.awt.Color(204, 0, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

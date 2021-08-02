@@ -86,6 +86,8 @@ public class WantD extends javax.swing.JFrame {
             }
         });
 
+        jTable1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTable1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -273,7 +275,7 @@ public class WantD extends javax.swing.JFrame {
     }//GEN-LAST:event_ExitActionPerformed
 
     private void miniMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseEntered
-        mini.setBackground(Color.black);
+        mini.setBackground(Color.GRAY);
     }//GEN-LAST:event_miniMouseEntered
 
     private void miniMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseExited
